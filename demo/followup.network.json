@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "description": "Follow-up Desk: meeting notes to action items, follow-up emails, and commitment tracking.",
+    "sample_queries": [
+      "Process these meeting notes.",
+      "Extract action items from the Q3 review.",
+      "Draft a follow-up email.",
+      "What did we commit to last week?"
+    ]
+  },
+  "llm_config": {
+    "model_name": "neuro-san-mock-browser"
+  },
+  "max_steps": 12,
+  "commondefs": {
+    "replacement_strings": {
+      "site_name": "Follow-up Desk",
+      "grounding_rules": "\nFacts come only from website_* tool results. Never invent action items.\n"
+    }
+  },
+  "tools": [
+    {
+      "name": "followup_agent",
+      "function": {
+        "description": "Extracts action items, decisions, and owners from meeting notes and drafts follow-up emails.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "request": { "type": "string", "description": "Meeting notes or a follow-up question." }
+          },
+          "required": ["request"]
+        }
+      },
+      "instructions": "You are the follow-up assistant for {site_name}. When given meeting notes, call website_extract_actions to pull out decisions, action items, owners and deadlines. Then call website_draft_followup to write a professional follow-up email. Then call website_track_commitment to record what was promised. {grounding_rules}",
+      "tools": []
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+/* Follow-up Desk — editorial, paper surfaces, signal-orange accent. */
+
+:root {
+  --paper: #faf7f2;
+  --card: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #6b6560;
+  --rule: #e4ddd2;
+  --accent: #e8590c;
+  --accent-soft: #fdf0e7;
+  --ok: #2e6f4e;
+  --ok-soft: #e9f4ee;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 28px 20px 64px; }
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.masthead h1 { font: 600 22px/1.2 Georgia, "Times New Roman", serif; margin: 0; }
+.masthead .tag { color: var(--muted); font-size: 13px; }
+
+.lede { max-width: 62ch; margin: 16px 0; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font: 600 17px/1.2 Georgia, serif;
+}
+
+.panel h3 {
+  margin: 12px 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+.row { display: flex; gap: 10px; margin-top: 12px; }
+
+.btn {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--ink);
+}
+
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.ghost { background: var(--card); color: var(--ink); }
+
+.actions ul, .followups ul { margin: 0; padding-left: 20px; }
+.actions li, .followups li { margin: 4px 0; font-size: 14px; }
+.deadline { color: var(--muted); font-size: 12.5px; }
+
+.email-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.email-header { font-size: 13.5px; margin-bottom: 10px; }
+.email-header div { margin: 2px 0; }
+.email-body {
+  margin: 0;
+  white-space: pre-wrap;
+  font: 13.5px/1.55 ui-monospace, Menlo, monospace;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 12px;
+}
+.email-note { color: var(--muted); font-size: 12px; margin-top: 8px; }
+
+.commitment-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+.commitment-header {
+  font: 600 12px/1 Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ok);
+  margin-bottom: 8px;
+}
+.commitment-note { color: var(--muted); font-size: 12px; margin-top: 6px; }
+
+#agent-app {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  min-height: 300px;
+  padding: 8px;
+}
+
+.hint { color: var(--muted); font-size: 13px; }
+
+.foot {
+  margin-top: 26px;
+  color: var(--muted);
+  font-size: 12.5px;
+  text-align: center;
+}

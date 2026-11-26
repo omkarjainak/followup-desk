@@ -1,0 +1,44 @@
+{
+  "name": "followup-desk",
+  "version": "0.1.0",
+  "description": "Follow-up Desk: meeting notes to action items, follow-up emails, and commitment tracking. Runs in your browser on your own key.",
+  "type": "module",
+  "license": "MIT",
+  "author": "omkar jainak",
+  "repository": "github.com/omkarjainak/followup-desk",
+  "keywords": [
+    "agentic-web",
+    "agents",
+    "meetings",
+    "productivity",
+    "follow-up",
+    "typescript",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22.19"
+  },
+  "bin": {
+    "peer-check": "dist/cli.js"
+  },
+  "exports": {
+    ".": "dist/index.js",
+    "./guard": "dist/guard.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "demo": "npm run build && python3 -m http.server 8096 --directory ./demo"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}

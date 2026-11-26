@@ -1,0 +1,11 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [{
+    "network": "followup",
+    "front_man": "followup_agent",
+    "aliases": ["followup", "followup_agent"],
+    "url": "followup"
+  }],
+  "imports": [],
+  "link_updates": { "mode": "browser-local" }
+}

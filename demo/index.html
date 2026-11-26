@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Follow-up Desk — meeting notes to action items</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <h1>Follow-up Desk</h1>
+      <div class="tag">meeting notes → action items · follow-up email · commitments</div>
+    </header>
+
+    <p class="lede">
+      Paste messy meeting notes. The agent extracts decisions, action items, owners,
+      and deadlines — then drafts a follow-up email and tracks what was promised.
+      Runs in your browser on your own key. No server, no subscription.
+    </p>
+
+    <section class="panel">
+      <h2>Meeting notes</h2>
+      <textarea id="notes" rows="10" placeholder="Paste meeting notes here..."></textarea>
+      <div class="row">
+        <button id="process" class="btn primary">Process meeting</button>
+        <button id="sample" class="btn ghost">Load sample notes</button>
+      </div>
+    </section>
+
+    <section class="panel" id="output" hidden>
+      <h2>Action items</h2>
+      <div id="actions" class="actions"></div>
+
+      <h2>Follow-up email</h2>
+      <div id="email" class="email"></div>
+
+      <h2>Commitment tracker</h2>
+      <div id="commitments" class="commitments"></div>
+    </section>
+
+    <section class="panel">
+      <h2>The agent</h2>
+      <div id="agent-app"></div>
+      <p class="hint">
+        The runtime's chat is here too — ask it to process the notes above or
+        check what was committed to.
+      </p>
+    </section>
+
+    <p class="foot">
+      Runs entirely in your browser. No server, no subscription. Your notes never
+      leave your machine.
+    </p>
+  </div>
+
+  <script type="module" src="./site.js"></script>
+</body>
+</html>

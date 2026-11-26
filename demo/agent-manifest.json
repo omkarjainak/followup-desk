@@ -1,0 +1,65 @@
+{
+  "brand": "Follow-up Desk",
+  "networks": [
+    {
+      "name": "followup",
+      "front_man": "followup_agent",
+      "hocon": "./followup.network.json",
+      "description": "Meeting notes to action items, follow-up emails, and commitment tracking.",
+      "tags": ["deployed", "nsdeploy"],
+      "sample_queries": [
+        "Process these meeting notes.",
+        "Extract action items from the Q3 review.",
+        "Draft a follow-up email.",
+        "What did we commit to last week?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "browser://mock",
+    "mock": true,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Closed by default. The agent only contacts peers the visitor consents to."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "followup",
+    "front_man": "followup_agent",
+    "available": false,
+    "reason": "Static demo bundle."
+  },
+  "theme": {
+    "primary": "#e8590c"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "followup",
+        "front_man": "followup_agent",
+        "aliases": ["followup", "followup_agent"],
+        "url": "followup"
+      }
+    ],
+    "imports": [],
+    "link_updates": { "mode": "browser-local" }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": true,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "agentTools": ["extract_actions", "draft_followup", "track_commitment"]
+  }
+}

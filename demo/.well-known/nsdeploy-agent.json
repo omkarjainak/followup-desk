@@ -1,0 +1,7 @@
+{
+  "protocol": "nsdeploy-agent-mcp/v1",
+  "network": "followup",
+  "front_man": "followup_agent",
+  "available": false,
+  "reason": "Static demo bundle."
+}
